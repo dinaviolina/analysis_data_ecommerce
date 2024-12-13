@@ -22,7 +22,7 @@ sns.set(style='dark')
 #     return summary
 
 st.header("Dashboard Penjualan Produk")
-all_data = pd.read_csv("../data/all_data.csv")
+all_data = pd.read_csv("data/all_data.csv")
 kolom_orderan = ['order_purchase_timestamp']
 all_data.sort_values(by='order_purchase_timestamp', inplace=True)
 all_data.reset_index(inplace=True)
@@ -33,7 +33,7 @@ for kolom_data in kolom_orderan:
 min_date = all_data['order_purchase_timestamp'].min()
 max_date = all_data['order_purchase_timestamp'].max()
 with st.sidebar:
-    st.image("../data/img.png")
+    st.image("data/img.png")
     st.title("Filter Data")
     start_date, end_date = st.date_input(
         label="Pilih rentang tanggal",
